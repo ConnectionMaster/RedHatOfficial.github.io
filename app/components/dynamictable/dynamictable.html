@@ -28,14 +28,16 @@
       <tr>
         <th>Project name</th>
         <th>Project website</th>
+        <th>Twitter</th>
         <th>Category</th>
       </tr>
     </thead>
     <tbody class="table-body">
       <tr class="table-row"
-        ng-repeat="project in projects | orderBy:'+projectName' | filter:{projectName:searchQuery} | filter:{category:searchCategory || ''} as filtered">
+        ng-repeat="project in projects | filter:{projectName:searchQuery} | filter:{category:searchCategory || ''} as filtered">
         <td><a href="{{ project.projectRepository }}">{{ project.projectName }}</a></td>
         <td><a href="{{ project.projectWebsite }}">{{ project.projectWebsite }}</a></td>
+        <td><a href="{{ project.twitterURL }}">{{ project.twitterHandle }}</a></td>
         <td>{{ project.category }}</td>
       </tr>
     </tbody>
